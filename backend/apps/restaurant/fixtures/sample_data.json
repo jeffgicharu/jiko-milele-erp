@@ -1,0 +1,655 @@
+[
+  {
+    "model": "restaurant.supplier",
+    "pk": 1,
+    "fields": {
+      "name": "Thika Fresh Market",
+      "contact_person": "Samuel Kariuki",
+      "phone_number": "+254701234567",
+      "email": "samuel@thikafresh.co.ke",
+      "address": "Thika Market, Stall 15\nThika, Kiambu County",
+      "payment_terms": "Cash on Delivery",
+      "delivery_schedule": "Monday, Wednesday, Friday",
+      "minimum_order": 5000.00,
+      "delivery_fee": 500.00,
+      "quality_rating": 4.5,
+      "is_active": true,
+      "notes": "Best source for fresh vegetables and fruits. Early morning deliveries preferred.",
+      "created_at": "2024-01-10T08:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.supplier",
+    "pk": 2,
+    "fields": {
+      "name": "Kikuyu Meat Suppliers",
+      "contact_person": "Mary Wanjiku",
+      "phone_number": "+254722567890",
+      "email": "mary@kikuyumeat.co.ke",
+      "address": "Kikuyu Town, Meat Section\nKiambu County",
+      "payment_terms": "Net 7",
+      "delivery_schedule": "Tuesday, Thursday, Saturday",
+      "minimum_order": 10000.00,
+      "delivery_fee": 800.00,
+      "quality_rating": 4.8,
+      "is_active": true,
+      "notes": "Premium quality goat meat and beef. Excellent butchering services.",
+      "created_at": "2024-01-15T09:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.supplier",
+    "pk": 3,
+    "fields": {
+      "name": "Nakumatt Wholesale",
+      "contact_person": "James Mwangi",
+      "phone_number": "+254733890123",
+      "email": "james@nakumattwholesale.co.ke",
+      "address": "Nakumatt Wholesale Center\nThika Super Highway",
+      "payment_terms": "Net 30",
+      "delivery_schedule": "Weekly on Mondays",
+      "minimum_order": 15000.00,
+      "delivery_fee": 1000.00,
+      "quality_rating": 4.2,
+      "is_active": true,
+      "notes": "Dry goods, spices, and non-perishables. Good pricing for bulk orders.",
+      "created_at": "2024-01-20T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.supplier",
+    "pk": 4,
+    "fields": {
+      "name": "Tusker Distributors",
+      "contact_person": "Peter Kamau",
+      "phone_number": "+254744123456",
+      "email": "peter@tuskerdist.co.ke",
+      "address": "Industrial Area\nNairobi",
+      "payment_terms": "Net 14",
+      "delivery_schedule": "Bi-weekly",
+      "minimum_order": 20000.00,
+      "delivery_fee": 1200.00,
+      "quality_rating": 4.7,
+      "is_active": true,
+      "notes": "Official distributor for Tusker beer and other beverages. Reliable delivery.",
+      "created_at": "2024-01-25T11:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 1,
+    "fields": {
+      "name": "Goat Meat",
+      "category": "protein",
+      "unit_of_measure": "kg",
+      "current_stock": 25.000,
+      "minimum_stock": 5.000,
+      "maximum_stock": 50.000,
+      "cost_per_unit": 800.0000,
+      "supplier": 2,
+      "storage_location": "walk_in_cooler",
+      "shelf_life_days": 5,
+      "is_perishable": true,
+      "allergen_info": "",
+      "reorder_point": 8.000,
+      "last_updated": "2024-08-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 2,
+    "fields": {
+      "name": "Beef",
+      "category": "protein",
+      "unit_of_measure": "kg",
+      "current_stock": 20.000,
+      "minimum_stock": 5.000,
+      "maximum_stock": 40.000,
+      "cost_per_unit": 700.0000,
+      "supplier": 2,
+      "storage_location": "walk_in_cooler",
+      "shelf_life_days": 5,
+      "is_perishable": true,
+      "allergen_info": "",
+      "reorder_point": 8.000,
+      "last_updated": "2024-08-15T12:15:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 3,
+    "fields": {
+      "name": "Chicken",
+      "category": "protein",
+      "unit_of_measure": "pieces",
+      "current_stock": 30.000,
+      "minimum_stock": 10.000,
+      "maximum_stock": 60.000,
+      "cost_per_unit": 450.0000,
+      "supplier": 2,
+      "storage_location": "walk_in_cooler",
+      "shelf_life_days": 3,
+      "is_perishable": true,
+      "allergen_info": "",
+      "reorder_point": 15.000,
+      "last_updated": "2024-08-15T12:30:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 4,
+    "fields": {
+      "name": "Tilapia Fish",
+      "category": "protein",
+      "unit_of_measure": "pieces",
+      "current_stock": 15.000,
+      "minimum_stock": 5.000,
+      "maximum_stock": 30.000,
+      "cost_per_unit": 350.0000,
+      "supplier": 1,
+      "storage_location": "freezer",
+      "shelf_life_days": 7,
+      "is_perishable": true,
+      "allergen_info": "Fish",
+      "reorder_point": 8.000,
+      "last_updated": "2024-08-15T12:45:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 5,
+    "fields": {
+      "name": "Sukuma Wiki (Kale)",
+      "category": "vegetables",
+      "unit_of_measure": "kg",
+      "current_stock": 10.000,
+      "minimum_stock": 3.000,
+      "maximum_stock": 20.000,
+      "cost_per_unit": 80.0000,
+      "supplier": 1,
+      "storage_location": "walk_in_cooler",
+      "shelf_life_days": 3,
+      "is_perishable": true,
+      "allergen_info": "",
+      "reorder_point": 5.000,
+      "last_updated": "2024-08-15T13:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 6,
+    "fields": {
+      "name": "Tomatoes",
+      "category": "vegetables",
+      "unit_of_measure": "kg",
+      "current_stock": 15.000,
+      "minimum_stock": 5.000,
+      "maximum_stock": 30.000,
+      "cost_per_unit": 120.0000,
+      "supplier": 1,
+      "storage_location": "prep_area",
+      "shelf_life_days": 5,
+      "is_perishable": true,
+      "allergen_info": "",
+      "reorder_point": 8.000,
+      "last_updated": "2024-08-15T13:15:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 7,
+    "fields": {
+      "name": "Onions",
+      "category": "vegetables",
+      "unit_of_measure": "kg",
+      "current_stock": 12.000,
+      "minimum_stock": 3.000,
+      "maximum_stock": 25.000,
+      "cost_per_unit": 90.0000,
+      "supplier": 1,
+      "storage_location": "dry_storage",
+      "shelf_life_days": 14,
+      "is_perishable": true,
+      "allergen_info": "",
+      "reorder_point": 5.000,
+      "last_updated": "2024-08-15T13:30:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 8,
+    "fields": {
+      "name": "Dhania (Coriander)",
+      "category": "vegetables",
+      "unit_of_measure": "kg",
+      "current_stock": 2.000,
+      "minimum_stock": 0.500,
+      "maximum_stock": 5.000,
+      "cost_per_unit": 200.0000,
+      "supplier": 1,
+      "storage_location": "walk_in_cooler",
+      "shelf_life_days": 3,
+      "is_perishable": true,
+      "allergen_info": "",
+      "reorder_point": 1.000,
+      "last_updated": "2024-08-15T13:45:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 9,
+    "fields": {
+      "name": "Maize Meal (Ugali Flour)",
+      "category": "grains",
+      "unit_of_measure": "kg",
+      "current_stock": 50.000,
+      "minimum_stock": 10.000,
+      "maximum_stock": 100.000,
+      "cost_per_unit": 85.0000,
+      "supplier": 3,
+      "storage_location": "dry_storage",
+      "shelf_life_days": 180,
+      "is_perishable": false,
+      "allergen_info": "Gluten",
+      "reorder_point": 20.000,
+      "last_updated": "2024-08-15T14:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 10,
+    "fields": {
+      "name": "Rice",
+      "category": "grains",
+      "unit_of_measure": "kg",
+      "current_stock": 25.000,
+      "minimum_stock": 5.000,
+      "maximum_stock": 50.000,
+      "cost_per_unit": 150.0000,
+      "supplier": 3,
+      "storage_location": "dry_storage",
+      "shelf_life_days": 365,
+      "is_perishable": false,
+      "allergen_info": "",
+      "reorder_point": 10.000,
+      "last_updated": "2024-08-15T14:15:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 11,
+    "fields": {
+      "name": "Cooking Oil",
+      "category": "dairy",
+      "unit_of_measure": "liters",
+      "current_stock": 10.000,
+      "minimum_stock": 2.000,
+      "maximum_stock": 20.000,
+      "cost_per_unit": 220.0000,
+      "supplier": 3,
+      "storage_location": "dry_storage",
+      "shelf_life_days": 365,
+      "is_perishable": false,
+      "allergen_info": "",
+      "reorder_point": 5.000,
+      "last_updated": "2024-08-15T14:30:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 12,
+    "fields": {
+      "name": "Salt",
+      "category": "spices",
+      "unit_of_measure": "kg",
+      "current_stock": 5.000,
+      "minimum_stock": 1.000,
+      "maximum_stock": 10.000,
+      "cost_per_unit": 50.0000,
+      "supplier": 3,
+      "storage_location": "dry_storage",
+      "shelf_life_days": 1095,
+      "is_perishable": false,
+      "allergen_info": "",
+      "reorder_point": 2.000,
+      "last_updated": "2024-08-15T14:45:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 13,
+    "fields": {
+      "name": "Black Pepper",
+      "category": "spices",
+      "unit_of_measure": "grams",
+      "current_stock": 500.000,
+      "minimum_stock": 100.000,
+      "maximum_stock": 1000.000,
+      "cost_per_unit": 2.5000,
+      "supplier": 3,
+      "storage_location": "dry_storage",
+      "shelf_life_days": 730,
+      "is_perishable": false,
+      "allergen_info": "",
+      "reorder_point": 200.000,
+      "last_updated": "2024-08-15T15:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 14,
+    "fields": {
+      "name": "Tusker Beer",
+      "category": "beverages",
+      "unit_of_measure": "cases",
+      "current_stock": 10.000,
+      "minimum_stock": 3.000,
+      "maximum_stock": 25.000,
+      "cost_per_unit": 2200.0000,
+      "supplier": 4,
+      "storage_location": "bar",
+      "shelf_life_days": 90,
+      "is_perishable": false,
+      "allergen_info": "Gluten",
+      "reorder_point": 5.000,
+      "last_updated": "2024-08-15T15:15:00Z"
+    }
+  },
+  {
+    "model": "restaurant.ingredient",
+    "pk": 15,
+    "fields": {
+      "name": "Bottled Water",
+      "category": "beverages",
+      "unit_of_measure": "cases",
+      "current_stock": 8.000,
+      "minimum_stock": 2.000,
+      "maximum_stock": 20.000,
+      "cost_per_unit": 800.0000,
+      "supplier": 4,
+      "storage_location": "bar",
+      "shelf_life_days": 365,
+      "is_perishable": false,
+      "allergen_info": "",
+      "reorder_point": 4.000,
+      "last_updated": "2024-08-15T15:30:00Z"
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 1,
+    "fields": {
+      "table_number": "T1",
+      "capacity": 4,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 100.00,
+      "y_coordinate": 100.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 2,
+    "fields": {
+      "table_number": "T2",
+      "capacity": 4,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 200.00,
+      "y_coordinate": 100.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 3,
+    "fields": {
+      "table_number": "T3",
+      "capacity": 4,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 300.00,
+      "y_coordinate": 100.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 4,
+    "fields": {
+      "table_number": "T4",
+      "capacity": 4,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 400.00,
+      "y_coordinate": 100.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 5,
+    "fields": {
+      "table_number": "T5",
+      "capacity": 6,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 100.00,
+      "y_coordinate": 200.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 6,
+    "fields": {
+      "table_number": "T6",
+      "capacity": 6,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 300.00,
+      "y_coordinate": 200.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 7,
+    "fields": {
+      "table_number": "T7",
+      "capacity": 2,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 500.00,
+      "y_coordinate": 100.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 8,
+    "fields": {
+      "table_number": "T8",
+      "capacity": 2,
+      "section": "Main Dining",
+      "status": "available",
+      "x_coordinate": 500.00,
+      "y_coordinate": 200.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 9,
+    "fields": {
+      "table_number": "BAR1",
+      "capacity": 3,
+      "section": "Bar Area",
+      "status": "available",
+      "x_coordinate": 600.00,
+      "y_coordinate": 100.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": 10,
+    "fields": {
+      "table_number": "BAR2",
+      "capacity": 3,
+      "section": "Bar Area",
+      "status": "available",
+      "x_coordinate": 600.00,
+      "y_coordinate": 200.00,
+      "is_active": true
+    }
+  },
+  {
+    "model": "restaurant.staff",
+    "pk": 1,
+    "fields": {
+      "employee_number": "EMP001",
+      "name": "Grace Wanjiku",
+      "role": "general_manager",
+      "phone_number": "+254701111111",
+      "email": "grace.wanjiku@jikomilele.co.ke",
+      "hire_date": "2024-01-15",
+      "hourly_rate": 2500.00,
+      "is_active": true,
+      "permissions": "{\"admin\": true, \"reports\": true, \"staff_management\": true}",
+      "emergency_contact": "John Wanjiku",
+      "emergency_phone": "+254722111111"
+    }
+  },
+  {
+    "model": "restaurant.staff",
+    "pk": 2,
+    "fields": {
+      "employee_number": "EMP002",
+      "name": "David Kimani",
+      "role": "head_chef",
+      "phone_number": "+254702222222",
+      "email": "david.kimani@jikomilele.co.ke",
+      "hire_date": "2024-02-01",
+      "hourly_rate": 1800.00,
+      "is_active": true,
+      "permissions": "{\"kitchen\": true, \"inventory\": true, \"menu\": true}",
+      "emergency_contact": "Susan Kimani",
+      "emergency_phone": "+254722222222"
+    }
+  },
+  {
+    "model": "restaurant.staff",
+    "pk": 3,
+    "fields": {
+      "employee_number": "EMP003",
+      "name": "Catherine Muthoni",
+      "role": "server",
+      "phone_number": "+254703333333",
+      "email": "catherine.muthoni@jikomilele.co.ke",
+      "hire_date": "2024-03-10",
+      "hourly_rate": 800.00,
+      "is_active": true,
+      "permissions": "{\"pos\": true, \"tables\": true, \"customers\": true}",
+      "emergency_contact": "Peter Muthoni",
+      "emergency_phone": "+254723333333"
+    }
+  },
+  {
+    "model": "restaurant.staff",
+    "pk": 4,
+    "fields": {
+      "employee_number": "EMP004",
+      "name": "Michael Ochieng",
+      "role": "server",
+      "phone_number": "+254704444444",
+      "email": "michael.ochieng@jikomilele.co.ke",
+      "hire_date": "2024-03-15",
+      "hourly_rate": 800.00,
+      "is_active": true,
+      "permissions": "{\"pos\": true, \"tables\": true, \"customers\": true}",
+      "emergency_contact": "Mary Ochieng",
+      "emergency_phone": "+254724444444"
+    }
+  },
+  {
+    "model": "restaurant.staff",
+    "pk": 5,
+    "fields": {
+      "employee_number": "EMP005",
+      "name": "Sarah Njeri",
+      "role": "host",
+      "phone_number": "+254705555555",
+      "email": "sarah.njeri@jikomilele.co.ke",
+      "hire_date": "2024-04-01",
+      "hourly_rate": 700.00,
+      "is_active": true,
+      "permissions": "{\"reservations\": true, \"tables\": true, \"customers\": true}",
+      "emergency_contact": "James Njeri",
+      "emergency_phone": "+254725555555"
+    }
+  },
+  {
+    "model": "restaurant.staff",
+    "pk": 6,
+    "fields": {
+      "employee_number": "EMP006",
+      "name": "Robert Kamau",
+      "role": "bartender",
+      "phone_number": "+254706666666",
+      "email": "robert.kamau@jikomilele.co.ke",
+      "hire_date": "2024-04-15",
+      "hourly_rate": 900.00,
+      "is_active": true,
+      "permissions": "{\"bar\": true, \"pos\": true, \"inventory\": true}",
+      "emergency_contact": "Jane Kamau",
+      "emergency_phone": "+254726666666"
+    }
+  },
+  {
+    "model": "restaurant.customer",
+    "pk": 1,
+    "fields": {
+      "phone_number": "+254707777777",
+      "name": "Alice Wanjiru",
+      "email": "alice.wanjiru@email.co.ke",
+      "loyalty_points": 150,
+      "last_visit_date": "2025-08-15",
+      "total_visits": 8,
+      "dietary_preferences": "Vegetarian options preferred",
+      "notes": "Regular customer, loves sukuma wiki. Prefers table by the window.",
+      "created_at": "2024-07-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.customer",
+    "pk": 2,
+    "fields": {
+      "phone_number": "+254708888888",
+      "name": "Joseph Mwangi",
+      "email": "joseph.mwangi@gmail.com",
+      "loyalty_points": 75,
+      "last_visit_date": "2025-08-12",
+      "total_visits": 3,
+      "dietary_preferences": "",
+      "notes": "Business professional. Often orders takeout during lunch.",
+      "created_at": "2024-07-15T14:00:00Z"
+    }
+  },
+  {
+    "model": "restaurant.customer",
+    "pk": 3,
+    "fields": {
+      "phone_number": "+254709999999",
+      "name": "Margaret Nyokabi",
+      "email": "margaret.nyokabi@yahoo.com",
+      "loyalty_points": 250,
+      "last_visit_date": "2025-08-17",
+      "total_visits": 15,
+      "dietary_preferences": "No pork, prefers goat meat",
+      "notes": "VIP customer. Celebrates special occasions here. Loves nyama choma.",
+      "created_at": "2024-06-01T16:00:00Z"
+    }
+  }
+]

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # Local apps
     'apps.authentication',
     'apps.core',
+    'apps.restaurant',
 ]
 
 MIDDLEWARE = [
