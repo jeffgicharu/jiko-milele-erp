@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.db import connection
 from django.core.cache import cache
+from drf_spectacular.utils import extend_schema
 import redis
 
 
@@ -15,6 +16,11 @@ class HealthCheckView(APIView):
     """
     permission_classes = []
     
+    @extend_schema(
+        summary="System health check",
+        description="Check the health status of all system components including database, cache, and Redis.",
+        tags=["System"]
+    )
     def get(self, request):
         """
         Check the health of various system components.

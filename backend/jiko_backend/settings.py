@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
+    'django_filters',
+    'drf_spectacular',
     # Local apps
     'apps.authentication',
     'apps.core',
@@ -120,6 +122,12 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
     ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # JWT Configuration
@@ -135,6 +143,28 @@ SIMPLE_JWT = {
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='http://localhost:3000', cast=Csv())
 CORS_ALLOW_CREDENTIALS = True
+
+# API Documentation Configuration
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Jiko Milele Restaurant ERP API',
+    'DESCRIPTION': 'Comprehensive API for managing restaurant operations including tables, staff, customers, inventory, and more. Built specifically for Kenyan restaurant management.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SERVERS': [
+        {'url': 'http://localhost:8000', 'description': 'Development server'},
+    ],
+    'TAGS': [
+        {'name': 'Authentication', 'description': 'User authentication and account management'},
+        {'name': 'Tables', 'description': 'Table management and status tracking'},
+        {'name': 'Staff', 'description': 'Staff member management and role assignment'},
+        {'name': 'Customers', 'description': 'Customer profiles and loyalty management'},
+        {'name': 'Suppliers', 'description': 'Supplier management and procurement'},
+        {'name': 'Inventory', 'description': 'Ingredient and stock management'},
+        {'name': 'System', 'description': 'System health and monitoring'},
+    ],
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SORT_OPERATION_PARAMETERS': False,
+}
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

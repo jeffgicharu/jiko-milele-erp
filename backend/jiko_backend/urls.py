@@ -8,6 +8,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # API Version 1
+    path('api/v1/', include('jiko_backend.api_urls')),
+    # Legacy endpoints for backward compatibility
     path('api/auth/', include('apps.authentication.urls')),
     path('api/', include('apps.core.urls')),
 ]
