@@ -1,9 +1,11 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { api } from '@/lib/api'
 import { User, LoginRequest, LoginResponse, AuthContextType } from '@/types/auth'
+import { useIsClient } from './useIsClient'
 
 export const useAuth = (): AuthContextType => {
   const queryClient = useQueryClient()
+  const isClient = useIsClient()
 
   const { data: user, isLoading, error } = useQuery<User>({
     queryKey: ['user'],
@@ -11,7 +13,7 @@ export const useAuth = (): AuthContextType => {
       const response = await api.get('/auth/profile/')
       return response.data
     },
-    enabled: typeof window !== 'undefined' && !!localStorage.getItem('access_token'),
+    enabled: isClient && !!localStorage.getItem('access_token'),
     retry: false,
     staleTime: 5 * 60 * 1000, // 5 minutes
   })
@@ -22,7 +24,7 @@ export const useAuth = (): AuthContextType => {
       return response.data
     },
     onSuccess: (data) => {
-      if (typeof window !== 'undefined') {
+      if (isClient) {
         localStorage.setItem('access_token', data.access_token)
         localStorage.setItem('refresh_token', data.refresh_token)
       }
@@ -33,7 +35,7 @@ export const useAuth = (): AuthContextType => {
 
   const logoutMutation = useMutation({
     mutationFn: async () => {
-      if (typeof window !== 'undefined') {
+      if (isClient) {
         const refreshToken = localStorage.getItem('refresh_token')
         if (refreshToken) {
           try {
@@ -47,7 +49,7 @@ export const useAuth = (): AuthContextType => {
     },
     onSettled: () => {
       // Clear tokens and cache regardless of server response
-      if (typeof window !== 'undefined') {
+      if (isClient) {
         localStorage.removeItem('access_token')
         localStorage.removeItem('refresh_token')
       }
@@ -55,7 +57,7 @@ export const useAuth = (): AuthContextType => {
     },
   })
 
-  const isAuthenticated = !!user && typeof window !== 'undefined' && !!localStorage.getItem('access_token')
+  const isAuthenticated = !!user && isClient && !!localStorage.getItem('access_token')
 
   // Get user permissions and role information
   const permissions = user?.profile?.permissions || []

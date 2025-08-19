@@ -83,6 +83,9 @@ class LoginView(APIView):
                 if profile.staff_profile:
                     profile.current_role = profile.staff_profile.role
                 
+                # Update last login timestamp
+                user.last_login = timezone.now()
+                user.save()
                 profile.save()
                 
                 # Generate tokens

@@ -111,11 +111,13 @@ class UserProfile(models.Model):
 
     def get_permissions(self):
         """Get user permissions based on staff role."""
-        if not self.staff_profile:
+        # Use staff_profile role if available, otherwise use current_role
+        if self.staff_profile:
+            role = self.staff_profile.role
+        elif self.current_role:
+            role = self.current_role
+        else:
             return []
-        
-        # Return permissions based on role from Staff model
-        role = self.staff_profile.role
         
         # This will be expanded when we implement permission groups
         role_permissions = {
